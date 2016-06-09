@@ -32,3 +32,6 @@ password=tutorialmy5ql
 driver=com.mysql.jdbc.Driver
 outputChangeLogFile=src/main/resources/liquibase-outputChangeLog.xml
 ```
+
+### References
+[Liquibase: Fed up With Inconsistent Schemas?](https://www.credera.com/blog/technology-insights/java/liquibase-fed-inconsistent-schemas/), by Justin Wilson
