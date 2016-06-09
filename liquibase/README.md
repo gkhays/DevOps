@@ -21,7 +21,7 @@ The article: [Use Liquibase to Safely Evolve Your Database Schema](http://www.ba
     </plugin> 
 </plugins>
 ```
-**Generate Change Log**
+**Generate Change Log**<br/>
 `mvn liquibase:generateChangeLog`
 
 Properties:
