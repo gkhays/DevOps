@@ -6,7 +6,25 @@ Pull the latest image from DockerHub.
 $ docker pull orientdb/orientdb
 ```
 
-In order to persist the OrientDB configuration and data, use a Docker `Data Volume`. Instead of typing all this from the command line, use a docker-compose configuration file instead. Invoke as follows:
+In order to persist the OrientDB configuration and data, use a Docker `Data Volume`. Instead of typing all this from the command line, use a `docker-compose` configuration file instead.
+
+```yaml
+# docker-compose up -d
+
+orientdb:
+  container_name: orientdb
+  image: orientdb/orientdb
+  ports:
+    - "2424:2424"
+    - "2480:2480"
+  volumes:
+    - ./data/orientdb/config:/orientdb/config
+    - ./data/orientdb/databases:/orientdb/databases
+  environment:
+     ORIENTDB_ROOT_PASSWORD: changeme
+```
+
+Invoke `docker-compose` as follows:
 
 ```bash
 $ docker-compose up -d
@@ -43,20 +61,4 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 32adfbf6eb62        orientdb/orientdb   "server.sh"         About an hour ago   Up About an hour    0.0.0.0:2424->2424/t
 cp, 0.0.0.0:2480->2480/tcp   orientdb
 docker@default:~$ docker exec -i -t 32adfbf6eb62 /bin/bash
-```
-
-```yaml
-# docker-compose up -d
-
-orientdb:
-  container_name: orientdb
-  image: orientdb/orientdb
-  ports:
-    - "2424:2424"
-    - "2480:2480"
-  volumes:
-    - ./data/orientdb/config:/orientdb/config
-    - ./data/orientdb/databases:/orientdb/databases
-  environment:
-     ORIENTDB_ROOT_PASSWORD: changeme
 ```
