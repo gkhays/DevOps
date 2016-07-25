@@ -65,5 +65,7 @@ docker@default:~$ docker exec -i -t 32adfbf6eb62 /bin/bash
 
 ### Connect to OrientDB Studio
 
+On Windows, the URL is http://192.168.99.100:2480/. Whereas on Mac OS X or Linux, it is http://localhost:2480/. Upon entering the link into your browser, you are met with a login screen.
+
 ![Login](images/OrientDB_Login.PNG)
 
