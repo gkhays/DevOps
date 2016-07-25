@@ -62,3 +62,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 cp, 0.0.0.0:2480->2480/tcp   orientdb
 docker@default:~$ docker exec -i -t 32adfbf6eb62 /bin/bash
 ```
+
+### Connect to OrientDB Studio
+
+![Login](images/OrientDB_Login.PNG)
+
