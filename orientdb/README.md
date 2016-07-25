@@ -1,0 +1,16 @@
+
+```yaml
+# docker-compose up -d
+
+orientdb:
+  container_name: orientdb
+  image: orientdb/orientdb
+  ports:
+    - "2424:2424"
+    - "2480:2480"
+  volumes:
+    - ./data/orientdb/config:/orientdb/config
+    - ./data/orientdb/databases:/orientdb/databases
+  environment:
+     ORIENTDB_ROOT_PASSWORD: changeme
+```
