@@ -38,6 +38,11 @@ On Windows, the URL is http://192.168.99.100:2480/. Whereas on Mac OS X or Linux
 
 ![Login](images/OrientDB_Login.PNG)
 
+Navigate to the schema tab.
+
+![OrientDB Studio Schema](images/OrientDB_Schema.png)
+
+
 ### Bulk Insert
 
 A bulk insertion of records may be conducted with the `oetl` extract, transform, and load (`ETL`) tool, which is used from the OrientDB console. To use the console, we must attach to the Docker OrientDB container.
@@ -118,7 +123,3 @@ To detach use the following escape sequence: `CTRL + p CTRL + q`. For more detai
 When the import process completes, we are able to access the new records.
 
 ![Login Records](images/Login_Records.png)
-
-Navigate to the schema tab.
-
-![OrientDB Studio Schema](images/OrientDB_Schema.png)
