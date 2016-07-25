@@ -30,7 +30,7 @@ Invoke `docker-compose` as follows:
 $ docker-compose up -d
 ```
 
-The `-d` switch puts it in daemon mode, where you may attach to it later; see http://askubuntu.com/a/507009.
+The `-d` switch puts it in daemon mode, where you may attach to it later; see below.
 
 ### Connect to OrientDB Studio
 
@@ -39,6 +39,8 @@ On Windows, the URL is http://192.168.99.100:2480/. Whereas on Mac OS X or Linux
 ![Login](images/OrientDB_Login.PNG)
 
 ### Bulk Insert
+
+A bulk insertion of records may be conducted with the `oetl` extract, transform, and load (`ETL`) tool, which is used from the OrientDB console. To use the console, we must attach to the Docker OrientDB container.
 
 #### Windows
 
@@ -71,7 +73,9 @@ cp, 0.0.0.0:2480->2480/tcp   orientdb
 docker@default:~$ docker exec -i -t 32adfbf6eb62 /bin/bash
 ```
 
-Use the ETL procedure from the OrientDB documentation: http://orientdb.com/docs/2.0/orientdb-etl.wiki/Import-from-CSV-to-a-Graph.html. Create a JSON file that describes what is imported, e.g.
+More detail here: [How to get bash or ssh into a running container in background mode?](http://askubuntu.com/a/507009).
+
+Use the `ETL` procedure from the OrientDB documentation: http://orientdb.com/docs/2.0/orientdb-etl.wiki/Import-from-CSV-to-a-Graph.html. Create a JSON file that describes what is imported, e.g.
 
 ```json
 {
@@ -96,3 +100,21 @@ Use the ETL procedure from the OrientDB documentation: http://orientdb.com/docs/
   }
 }
 ```
+
+Navigate to `/orientdb/bin` and invoke the `ETL` script.
+
+```bash
+# bin/oetl.sh /orientdb/config/logins_etl.json
+ 
++ extracted 44,775 rows (5,796 rows/sec) - 44,775 rows -> loaded 44,773 vertices (5,796 vertices/sec) Total time: 14007m
+s [0 warnings, 0 errors]
+END ETL PROCESSOR
++ extracted 50,001 rows (5,839 rows/sec) - 50,001 rows -> loaded 50,000 vertices (5,840 vertices/sec) Total time: 14902m
+s [0 warnings, 0 errors]
+```
+
+To detach use the following escape sequence: `CTRL + p CTRL + q`. For more detail see [How do you attach and detach from Docker's process?](http://stackoverflow.com/a/19689048/6146580).
+
+When the import process completes, we are able to access the new records.
+
+![Login Records](images/Login_Records.png)
