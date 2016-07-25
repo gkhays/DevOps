@@ -1,0 +1,21 @@
+{
+  "source": { "file": { "path": "/orientdb/config/logins.csv" } },
+  "extractor": { "row": {} },
+  "transformers": [
+    { "csv": {} },
+    { "vertex": { "class": "Logins" } }
+  ],
+  "loader": {
+    "orientdb": {
+       "dbURL": "remote:/localhost/ar-graph",
+       "dbType": "graph",
+	   "dbUser": "root",
+	   "dbPassword": "n0v3ll",	   
+       "classes": [
+         {"name": "Logins", "extends": "V"}
+       ], "indexes": [
+         {"class":"Logins", "fields":["id:integer"], "type":"UNIQUE" }
+       ]
+    }
+  }
+}
