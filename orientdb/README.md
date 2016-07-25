@@ -83,10 +83,10 @@ Use the ETL procedure from the OrientDB documentation: http://orientdb.com/docs/
   ],
   "loader": {
     "orientdb": {
-       "dbURL": "remote:/localhost/ar-graph",
+       "dbURL": "remote:/localhost/my-graph",
        "dbType": "graph",
        "dbUser": "root",
-       "dbPassword": "n0v3ll",
+       "dbPassword": "changeme",
        "classes": [
          {"name": "Logins", "extends": "V"}
        ], "indexes": [
