@@ -1,4 +1,8 @@
-### Docker Container
+# OrientDB with Docker on Windows 7
+
+This example shows how to start OrientDB Studio in a Docker container on Windows 7.
+
+## Usage
 
 Pull the latest image from DockerHub.
 
