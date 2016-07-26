@@ -127,3 +127,5 @@ To detach use the following escape sequence: `CTRL + p CTRL + q`. For more detai
 When the import process completes, we are able to access the new records.
 
 ![Login Records](images/Login_Records.png)
+
+## References
