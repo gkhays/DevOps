@@ -2,7 +2,7 @@
 
 This example shows how to start OrientDB Studio in a Docker container on Windows 7.
 
-## Usage
+### Usage
 
 Pull the latest image from DockerHub.
 
